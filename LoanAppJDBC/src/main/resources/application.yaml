@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    loanapp:
+      jdbc-url: "jdbc:mysql://localhost:3306/loanapp_growlab"
+      username: "root"
+      password: "12345"
+      type: com.zaxxer.hikari.HikariDataSource
