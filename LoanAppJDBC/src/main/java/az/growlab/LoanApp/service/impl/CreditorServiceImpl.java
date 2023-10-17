@@ -60,7 +60,7 @@ public class CreditorServiceImpl implements CreditorService {
 
             int loanId = loanRepo.save(li);
 
-            listProduct.forEach(product -> product.setLoan_info_id(loanId));
+            listProduct.forEach(product -> product.setLoanInfoId(loanId));
             li.getProducts().forEach(productRepo::save);
 
             clientRepo.setLoanInfo(clientId, loanId);

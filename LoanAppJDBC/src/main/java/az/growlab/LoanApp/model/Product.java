@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 public class Product {
 
     private int id;
-    private int loan_info_id;
+    private int loanInfoId;
     private String name;
     private BigDecimal price;
 

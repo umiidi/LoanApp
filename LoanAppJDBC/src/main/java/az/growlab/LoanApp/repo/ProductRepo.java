@@ -21,7 +21,7 @@ public class ProductRepo {
                 query,
                 new MapSqlParameterSource()
                         .addValue("id", p.getId())
-                        .addValue("loan_info_id", p.getLoan_info_id())
+                        .addValue("loan_info_id", p.getLoanInfoId())
                         .addValue("name", p.getName())
                         .addValue("price", p.getPrice()),
                 keyHolder
