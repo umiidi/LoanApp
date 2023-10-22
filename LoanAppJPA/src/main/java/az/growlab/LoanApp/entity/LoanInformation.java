@@ -23,7 +23,7 @@ public class LoanInformation {
     private Double interestRate;
 
     @OneToOne(mappedBy = "loanInfo")
-    private Client client;
+    private Order order;
 
     public BigDecimal getPreAmount() {
         BigDecimal result = BigDecimal.valueOf(0);
