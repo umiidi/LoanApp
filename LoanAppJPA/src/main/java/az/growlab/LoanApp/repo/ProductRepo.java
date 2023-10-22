@@ -1,6 +1,6 @@
 package az.growlab.LoanApp.repo;
 
-import az.growlab.LoanApp.model.Product;
+import az.growlab.LoanApp.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

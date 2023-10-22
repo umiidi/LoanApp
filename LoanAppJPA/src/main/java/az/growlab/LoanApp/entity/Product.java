@@ -1,4 +1,4 @@
-package az.growlab.LoanApp.model;
+package az.growlab.LoanApp.entity;
 
 import lombok.Data;
 

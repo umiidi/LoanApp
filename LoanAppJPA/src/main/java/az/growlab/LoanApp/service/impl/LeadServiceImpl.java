@@ -4,7 +4,7 @@ import az.growlab.LoanApp.enums.ActionStatus;
 import az.growlab.LoanApp.enums.ConfirmStatus;
 import az.growlab.LoanApp.enums.FinalStatus;
 import az.growlab.LoanApp.exception.ReasonNotFoundException;
-import az.growlab.LoanApp.model.Client;
+import az.growlab.LoanApp.entity.Client;
 import az.growlab.LoanApp.repo.ClientRepo;
 import az.growlab.LoanApp.service.inter.LeadService;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +20,7 @@ public class LeadServiceImpl implements LeadService {
     public void identityStatus(int clientId, ConfirmStatus status, String rejectReason) {
         Client c = clientRepo.getReferenceById(clientId);
         if (ConfirmStatus.APPROVE == status) {
-            c.setActionStatus(ActionStatus.IDENTITY_CHECK_APPROVED.name());
+            c.setActionStatus(ActionStatus.IDENTITY_CHECK_APPROVED);
             c.setRejectReason(null);
             clientRepo.save(c);
         } else {
@@ -32,7 +32,7 @@ public class LeadServiceImpl implements LeadService {
     public void initialStatus(int clientId, ConfirmStatus status, String rejectReason) {
         Client c = clientRepo.getReferenceById(clientId);
         if (ConfirmStatus.APPROVE == status) {
-            c.setActionStatus(ActionStatus.INITIAL_CHECK_APPROVED.name());
+            c.setActionStatus(ActionStatus.INITIAL_CHECK_APPROVED);
             c.setRejectReason(null);
             clientRepo.save(c);
         } else {
@@ -44,9 +44,9 @@ public class LeadServiceImpl implements LeadService {
     public void finalStatus(int clientId, ConfirmStatus status, String rejectReason) {
         Client c = clientRepo.getReferenceById(clientId);
         if (ConfirmStatus.APPROVE == status) {
-            c.setActionStatus(ActionStatus.FINAL_CHECK_APPROVED.name());
+            c.setActionStatus(ActionStatus.FINAL_CHECK_APPROVED);
             c.setRejectReason(null);
-            c.setFinalStatus(FinalStatus.COMPLETED.name());
+            c.setFinalStatus(FinalStatus.COMPLETED);
             clientRepo.save(c);
         } else {
             checkRejectReason(clientId, rejectReason);

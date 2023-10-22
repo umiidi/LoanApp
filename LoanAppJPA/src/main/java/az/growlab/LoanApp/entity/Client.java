@@ -1,4 +1,4 @@
-package az.growlab.LoanApp.model;
+package az.growlab.LoanApp.entity;
 
 import az.growlab.LoanApp.enums.ActionStatus;
 import az.growlab.LoanApp.enums.FinalStatus;
@@ -27,8 +27,12 @@ public class Client {
     @JoinColumn(name = "loan_id")
     private LoanInformation loanInfo;
 
-    private String actionStatus;
+    @Enumerated(EnumType.STRING)
+    private ActionStatus actionStatus;
+
     private String rejectReason;
-    private String finalStatus;
+
+    @Enumerated(EnumType.STRING)
+    private FinalStatus finalStatus;
 
 }

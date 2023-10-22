@@ -1,4 +1,4 @@
-package az.growlab.LoanApp.model;
+package az.growlab.LoanApp.entity;
 
 import az.growlab.LoanApp.enums.Gender;
 import lombok.Data;
@@ -19,7 +19,10 @@ public class PassportInformation {
     private String surname;
     private String patronymic;
     private Date birthdate;
+
+    @Enumerated(EnumType.STRING)
     private Gender gender;
+
     private String passportNumber;
 
     @OneToOne(mappedBy = "passportInfo")
